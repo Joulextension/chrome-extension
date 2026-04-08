@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Tab Grouper | Account & Billing</title>
+    <meta
+      name="description"
+      content="Account and billing surface for Smart Tab Grouper. Compare free and premium plans and open your account."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="index">
+    <div class="site-shell">
+      <div data-site-header></div>
+      <main class="main-content">
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Account, access and billing for Smart Tab Grouper</div>
+            <h1>Premium access without a complicated dashboard.</h1>
+            <p>
+              This static surface is built for GitHub Pages and later plugs into Firebase Auth,
+              a Cloudflare Worker API, D1 and Stripe. The first release keeps the interface fast,
+              clear and ready for those integration points.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="account.html">Open account</a>
+              <a class="button button-secondary" href="billing.html">Upgrade to Premium</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <div class="kicker">Plan snapshot</div>
+            <div class="hero-panel-grid">
+              <div class="metric">
+                <span class="metric-value">Free</span>
+                <span class="metric-label">Core grouping flow and simple usage.</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">Premium</span>
+                <span class="metric-label">Paid access, billing controls and future sync-ready account state.</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">Static</span>
+                <span class="metric-label">No build step, no framework, GitHub Pages friendly.</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">Mock-ready</span>
+                <span class="metric-label">State transitions and billing calls already scaffolded.</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="page-section">
+          <div class="section-heading">
+            <div>
+              <div class="kicker">Plans</div>
+              <h2>Free vs Premium overview</h2>
+            </div>
+            <div class="muted-note">Designed to feel like an account surface, not a marketing microsite.</div>
+          </div>
+          <div class="cards-grid">
+            <article class="section-card">
+              <div class="pricing-head">
+                <div>
+                  <h3>Free</h3>
+                  <p class="card-copy">For users who only need the basic extension flow.</p>
+                </div>
+                <span class="badge badge-free">Free</span>
+              </div>
+              <div class="list">
+                <div class="list-row">
+                  <span>Access level</span>
+                  <strong>Basic usage</strong>
+                </div>
+                <div class="list-row">
+                  <span>Account</span>
+                  <strong>Optional later</strong>
+                </div>
+                <div class="list-row">
+                  <span>Billing</span>
+                  <strong>No subscription</strong>
+                </div>
+              </div>
+            </article>
+            <article class="section-card">
+              <div class="pricing-head">
+                <div>
+                  <h3>Premium</h3>
+                  <p class="card-copy">For paid users who need account-aware access and billing controls.</p>
+                </div>
+                <span class="badge badge-premium">Premium</span>
+              </div>
+              <div class="list">
+                <div class="list-row">
+                  <span>Access level</span>
+                  <strong>Premium features</strong>
+                </div>
+                <div class="list-row">
+                  <span>Account</span>
+                  <strong>Google sign-in</strong>
+                </div>
+                <div class="list-row">
+                  <span>Billing</span>
+                  <strong>Yearly or lifetime</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="details-grid">
+            <article class="section-card">
+              <div class="kicker">Implementation</div>
+              <h3>Prepared for real integrations</h3>
+              <p class="card-copy">
+                The frontend already exposes `signInWithGoogle()`, `fetchAccount()`,
+                `createCheckout(planCode)` and `openBillingPortal()` with mock results.
+              </p>
+              <div class="list">
+                <div class="list-row">
+                  <span>Auth</span>
+                  <strong>Firebase Auth placeholder</strong>
+                </div>
+                <div class="list-row">
+                  <span>API</span>
+                  <strong>Cloudflare Worker placeholder</strong>
+                </div>
+                <div class="list-row">
+                  <span>Database</span>
+                  <strong>D1-ready account model</strong>
+                </div>
+                <div class="list-row">
+                  <span>Payments</span>
+                  <strong>Stripe-ready checkout hooks</strong>
+                </div>
+              </div>
+            </article>
+            <article class="section-card">
+              <div class="kicker">Quick entry</div>
+              <h3>Common account actions</h3>
+              <p class="card-copy">
+                Keep the high-frequency tasks visible: sign-in, upgrade, and billing management.
+              </p>
+              <div class="split-actions">
+                <a class="button button-secondary" href="account.html">Open account</a>
+                <a class="button button-primary" href="billing.html">Upgrade to Premium</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+      <div data-site-footer></div>
+    </div>
+  </body>
+</html>
