@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing | Smart Tab Grouper</title>
+    <meta
+      name="description"
+      content="View yearly and lifetime premium plans, open the billing portal, and preview mock billing states."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="billing">
+    <div class="site-shell">
+      <div data-site-header></div>
+      <main class="main-content">
+        <section class="page-intro">
+          <div>
+            <div class="eyebrow">Billing</div>
+            <h1>Choose the premium plan that fits your usage.</h1>
+            <p>
+              Clean, static pricing for GitHub Pages now. Worker and Stripe handoff points are already
+              marked in the shared JavaScript layer for the next phase.
+            </p>
+          </div>
+          <aside class="status-panel">
+            <div class="kicker">Billing state</div>
+            <h2 data-billing-status>Loading billing state...</h2>
+            <div class="list">
+              <div class="detail-row">
+                <span class="detail-key">User</span>
+                <span class="detail-value" data-billing-email>No active user</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Plan</span>
+                <span class="detail-value" data-billing-plan>Free</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Next event</span>
+                <span class="detail-value" data-billing-renews>No renewal</span>
+              </div>
+            </div>
+            <div class="status-banner hidden" data-runtime-message></div>
+          </aside>
+        </section>
+
+        <section class="page-section">
+          <div class="cards-grid">
+            <article class="pricing-card is-featured">
+              <div class="pricing-head">
+                <div>
+                  <h2>Premium Yearly</h2>
+                  <p class="card-copy">Best fit for most active users who want predictable renewal.</p>
+                </div>
+                <span class="badge badge-premium">Premium</span>
+              </div>
+              <div class="price">
+                <span class="price-amount">$19</span>
+                <span class="price-caption">per year</span>
+              </div>
+              <div class="pricing-feature">Premium feature access across your signed-in account.</div>
+              <div class="pricing-feature">Billing portal access for invoices, payment method and cancellation.</div>
+              <div class="pricing-feature">Prepared for Stripe Checkout session handoff.</div>
+              <button class="button button-primary" data-action="checkout" data-plan-code="premium-yearly">
+                Upgrade to Yearly
+              </button>
+            </article>
+
+            <article class="pricing-card">
+              <div class="pricing-head">
+                <div>
+                  <h2>Premium Lifetime</h2>
+                  <p class="card-copy">One-time purchase for permanent premium access.</p>
+                </div>
+                <span class="badge badge-premium">Premium</span>
+              </div>
+              <div class="price">
+                <span class="price-amount">$49</span>
+                <span class="price-caption">once</span>
+              </div>
+              <div class="pricing-feature">No annual renewal cycle after purchase.</div>
+              <div class="pricing-feature">Receipts and billing records still accessible from the portal.</div>
+              <div class="pricing-feature">Prepared for Stripe one-time payment handoff.</div>
+              <button class="button button-secondary" data-action="checkout" data-plan-code="premium-lifetime">
+                Upgrade to Lifetime
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="details-grid">
+            <article class="status-panel">
+              <div class="pricing-head">
+                <div>
+                  <div class="kicker">Portal</div>
+                  <h2>Manage existing billing</h2>
+                </div>
+                <span class="badge badge-free" data-billing-badge>Free</span>
+              </div>
+              <p class="card-copy" data-billing-hint>
+                Billing portal becomes available after a paid upgrade.
+              </p>
+              <div class="split-actions">
+                <button class="button button-primary" data-action="billing-portal">Manage Subscription</button>
+              </div>
+            </article>
+
+            <article class="status-panel">
+              <div class="kicker">Mock info</div>
+              <h2>Preview backend-connected states</h2>
+              <p class="card-copy">
+                This section mirrors what the Worker API would eventually return after looking up the
+                signed-in user, Stripe customer and D1 account records.
+              </p>
+              <div class="state-switcher" aria-label="Mock billing state controls">
+                <button class="chip" data-state-chip="signedOut">signedOut</button>
+                <button class="chip" data-state-chip="signedInFree">signedInFree</button>
+                <button class="chip" data-state-chip="signedInPremiumYearly">signedInPremiumYearly</button>
+                <button class="chip" data-state-chip="signedInPremiumLifetime">signedInPremiumLifetime</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+      <div data-site-footer></div>
+    </div>
+  </body>
+</html>
