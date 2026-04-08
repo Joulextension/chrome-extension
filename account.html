@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account | Smart Tab Grouper</title>
+    <meta
+      name="description"
+      content="Manage account access for Smart Tab Grouper with mock states for signed out, free and premium users."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="account">
+    <div class="site-shell">
+      <div data-site-header></div>
+      <main class="main-content">
+        <section class="page-intro">
+          <div>
+            <div class="eyebrow">Account center</div>
+            <h1>Keep access and billing state in one place.</h1>
+            <p>
+              This page is designed as the future login and account hub. It already supports mock
+              signed-out, free and premium states so the UI can be validated before backend wiring.
+            </p>
+          </div>
+          <div class="status-panel">
+            <div class="kicker">Current status</div>
+            <h2 data-account-message>Loading account state...</h2>
+            <div class="status-banner hidden" data-runtime-message></div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="details-grid">
+            <article class="status-panel">
+              <div class="pricing-head">
+                <div>
+                  <div class="kicker">Identity</div>
+                  <h2>User profile</h2>
+                </div>
+                <span class="badge badge-free" data-account-badge>Free</span>
+              </div>
+              <div class="list">
+                <div class="detail-row">
+                  <span class="detail-key">Email</span>
+                  <span class="detail-value" data-account-email>Not signed in</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-key">Plan</span>
+                  <span class="detail-value" data-account-plan>Free</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-key">Access</span>
+                  <span class="detail-value" data-account-seat>Free features only</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="status-panel">
+              <div class="kicker">Plan summary</div>
+              <h2>Subscription snapshot</h2>
+              <div class="list">
+                <div class="detail-row">
+                  <span class="detail-key">Billing status</span>
+                  <span class="detail-value" data-account-status>No active subscription</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-key">Renews</span>
+                  <span class="detail-value" data-account-renews>No renewal</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-key">Portal note</span>
+                  <span class="detail-value" data-account-hint>Billing portal becomes available after a paid upgrade.</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="cards-grid">
+            <article class="section-card" data-signed-out-only>
+              <div class="kicker">Signed out</div>
+              <h3>Connect a Google account</h3>
+              <p class="card-copy">
+                The production flow will call Firebase Auth here. For now, the button switches to a
+                mock signed-in free account.
+              </p>
+              <div class="split-actions">
+                <button class="button button-primary" data-action="sign-in">Sign in with Google</button>
+              </div>
+            </article>
+
+            <article class="section-card" data-signed-in-only>
+              <div class="kicker">Signed in</div>
+              <h3>Open billing controls</h3>
+              <p class="card-copy">
+                Use the billing page for plan upgrades or portal access. The billing CTA is wired to
+                the mock portal placeholder in `app.js`.
+              </p>
+              <div class="split-actions">
+                <a class="button button-secondary" href="billing.html">View plans</a>
+                <button class="button button-primary" data-action="billing-portal">Open billing</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <article class="section-card">
+            <div class="kicker">Preview states</div>
+            <h3>Switch account state without a backend</h3>
+            <p class="card-copy">
+              Test via the state chips below or by opening this page with `?state=signedInPremiumYearly`
+              style query params.
+            </p>
+            <div class="state-switcher" aria-label="Mock account state controls">
+              <button class="chip" data-state-chip="signedOut">signedOut</button>
+              <button class="chip" data-state-chip="signedInFree">signedInFree</button>
+              <button class="chip" data-state-chip="signedInPremiumYearly">signedInPremiumYearly</button>
+              <button class="chip" data-state-chip="signedInPremiumLifetime">signedInPremiumLifetime</button>
+            </div>
+          </article>
+        </section>
+      </main>
+      <div data-site-footer></div>
+    </div>
+  </body>
+</html>
